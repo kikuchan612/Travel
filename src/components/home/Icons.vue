@@ -1,7 +1,7 @@
 <template>
   <div class="icons">
     <swiper :options="swiperOptions">
-      <swiper-slide :key='index' v-for='(page,index) in pages'>
+      <swiper-slide :key="index" v-for="(page,index) in pages">
         <div class="icon" :key="item.id" v-for="item in page">
           <div class="icon-img">
             <img class="img-content" :src="item.imgUrl" alt />
@@ -74,22 +74,22 @@ export default {
           desc: "一日游"
         }
       ]
-    }
+    };
   },
-  computed:{
-      pages(){
-          const pages=[]
-          this.iconList.forEach((item,index)=>{
-              const page=Math.floor(index/8)
-              if(!pages[page]){
-                  pages[page]=[]
-              }
-              pages[page].push(item)
-          })
-          return pages
-      }
+  computed: {
+    pages() {
+      const pages = [];
+      this.iconList.forEach((item, index) => {
+        const page = Math.floor(index / 8);
+        if (!pages[page]) {
+          pages[page] = [];
+        }
+        pages[page].push(item);
+      });
+      return pages;
+    }
   }
-}
+};
 </script>
 <style lang="less" scoped>
 @import "../../assets/varible.less";
@@ -99,6 +99,7 @@ export default {
   padding-bottom: 50%;
 }
 .icons {
+  margin-top: 0.1rem;
   .icon {
     position: relative;
     width: 25%;
