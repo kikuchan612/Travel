@@ -8,10 +8,10 @@
               <span class='iconfont'>&#xe632;</span>
               输入城市/景点/游玩主题
           </div>
-          <div class="header-right">
+          <router-link tag="div" to="/city" class="header-right">
               {{this.city}}
                <span class='iconfont arrow-icon'>&#xe665;</span>
-          </div>
+          </router-link>
       </div>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
 <style lang='less' scoped>
     @import '../../assets/varible.less';
   .header{
-      line-height: 0.86rem;
+      line-height: @headerHeight;
       display: flex;
       background-color: @bgColor;
       color:#fff;
