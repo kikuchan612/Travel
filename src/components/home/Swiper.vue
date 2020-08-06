@@ -11,8 +11,8 @@
 <script>
 export default {
   name: "HomeSwiper",
-  props:{
-    swiperList:Array
+  props: {
+    swiperList: Array
   },
   data() {
     return {
@@ -22,16 +22,16 @@ export default {
           clickable: true
         },
         loop: true,
-        autoplay:true
+        autoplay: true
       }
-    }
+    };
   },
-  computed:{
-    showSwiper(){
-      return this.swiperList.length
+  computed: {
+    showSwiper() {
+      return this.swiperList.length;
     }
   }
-}
+};
 </script>
 <style lang="less" scope>
 .wrapper {

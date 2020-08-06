@@ -7,7 +7,7 @@
         :ref="item"
         v-for="item in letters"
         @click="findLetter"
-        @touchstart="handleStart"
+        @touchstart.prevent="handleStart"
         @touchmove="handleMove"
         @touchend="handleEnd"
       >{{item}}</li>

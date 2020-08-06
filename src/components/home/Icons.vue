@@ -15,13 +15,13 @@
 <script>
 export default {
   name: "HomeIcons",
-  props:{
-    iconList:Array
+  props: {
+    iconList: Array
   },
   data() {
     return {
-      swiperOptions: {}  
-    }
+      swiperOptions: {}
+    };
   },
   computed: {
     pages() {
@@ -31,12 +31,12 @@ export default {
         if (!pages[page]) {
           pages[page] = [];
         }
-        pages[page].push(item)
-      })
+        pages[page].push(item);
+      });
       return pages;
     }
   }
-}
+};
 </script>
 <style lang="less" scoped>
 @import "../../assets/varible.less";

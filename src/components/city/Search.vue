@@ -5,7 +5,12 @@
     </div>
     <div class="search-content" v-show="keyword">
       <ul>
-        <li :key="item.id" v-for="item of list" class="search-item border-bottom" @click="changeCity(item.name)">{{item.name}}</li>
+        <li
+          :key="item.id"
+          v-for="item of list"
+          class="search-item border-bottom"
+          @click="changeCity(item.name)"
+        >{{item.name}}</li>
         <li class="search-item border-bottom" v-show="show">没有找到匹配数据</li>
       </ul>
     </div>
@@ -14,7 +19,7 @@
 
 <script>
 import BScroll from "better-scroll";
-import {mapMutations} from 'vuex'
+import { mapMutations } from "vuex";
 export default {
   name: "Search",
   props: {
@@ -27,19 +32,19 @@ export default {
       timer: null
     };
   },
-  computed:{
-      show(){
-          return !this.list.length
-      }
+  computed: {
+    show() {
+      return !this.list.length;
+    }
   },
   watch: {
     keyword() {
       if (this.time) {
         clearTimeout(timer);
       }
-      if(!this.keyword){
-          this.list=[]
-          return
+      if (!this.keyword) {
+        this.list = [];
+        return;
       }
       this.timer = setTimeout(() => {
         const result = [];
@@ -57,12 +62,12 @@ export default {
       }, 100);
     }
   },
-  methods:{
-    changeCity(name){
-      this.changeItem(name)
-      this.$router.push('/')
+  methods: {
+    changeCity(name) {
+      this.changeItem(name);
+      this.$router.push("/");
     },
-    ...mapMutations(['changeItem'])
+    ...mapMutations(["changeItem"])
   },
   mounted() {
     this.scroll = new BScroll(".search-content");

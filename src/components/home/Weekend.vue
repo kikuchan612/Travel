@@ -19,7 +19,7 @@
 export default {
   name: "Recommend",
   props: {
-    weekendList:Array
+    weekendList: Array
   },
   data() {
     return {};
